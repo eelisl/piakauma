@@ -23,12 +23,11 @@ get_header(); ?>
 $featured_image = '';
 if (has_post_thumbnail()) :
 	$featured_image = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>
-	<div class="entry-header-page" style="background-image: url(<?php echo $featured_image; ?>); background-position: 50% 
-	<?php
-	if (get_field('kuvien_asettelu')) :
-		echo get_field('kuvien_asettelu');
-	else : echo "50";
-	endif; ?>%"></div>
+	<div class="entry-header-page" style="background-image: url(<?php echo $featured_image; ?>); background-position: <?php
+																														if (get_field('kuvien_asettelu')) :
+																															echo get_field('kuvien_asettelu');
+																														else : echo "50";
+																														endif; ?>% 50%;"></div>
 <?php endif; ?>
 
 <div id="content" class="content-area">
