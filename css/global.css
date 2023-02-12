@@ -7275,12 +7275,12 @@ only screen and (min-width: 991px) and (-ms-high-contrast: none) {
   }
 }
 
-#introduction p {
-  font-size: 16px;
+#introduction .container-larger .col-md-12 .col-md-4 p {
+  font-size: 20px;
   font-weight: 200;
 }
 
-#introduction img {
+#introduction .container-larger .col-md-12 .col-md-4 img {
   object-fit: cover;
   object-position: 50% 50%;
 }
