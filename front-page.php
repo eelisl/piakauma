@@ -55,7 +55,7 @@ get_header();
 			<div class="container-larger">
 				<div class="col-md-12">
 					<div class="col-md-5">
-						<?php if (get_the_field("lainaus_kuva")) : ?>
+						<?php if (get_field("lainaus_kuva")) : ?>
 
 							<img src=<?php get_the_field("lainaus_kuva"); ?> />
 
