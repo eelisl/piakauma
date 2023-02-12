@@ -57,7 +57,7 @@
             <p class="site-title">
               <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                 <span class="screen-reader-text"><?php bloginfo('name'); ?></span>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/uusimaa-logo.png" alt="Pia Kauma">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/uusimaa-logo_darker.png" alt="Pia Kauma">
               </a>
             </p>
             <?php
