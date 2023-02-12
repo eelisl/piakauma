@@ -7302,13 +7302,15 @@ only screen and (min-width: 1920px) and (-ms-high-contrast: none) {
   width: 225px;
   height: 225px;
   border-radius: 50%;
+  margin: 0;
+  overflow: hidden;
 }
 
 
 #values .col-md-3 .img-wrapper img {
   object-fit: cover;
   object-position: 50%;
-  width: 110%;
+  width: 300px;
   height: auto;
 }
 
