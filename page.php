@@ -66,7 +66,9 @@ if (has_post_thumbnail()) :
 
 		<?php } ?>
 
-		<?php include('template-parts/favourite-tags.php'); ?>
+		<?php
+		// include('template-parts/favourite-tags.php'); 
+		?>
 
 		<!--- LATEST BLOG POSTS  -->
 		<section id="blog">
