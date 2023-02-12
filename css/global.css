@@ -7454,7 +7454,7 @@ only screen and (min-width: 991px) and (-ms-high-contrast: none) {
 }
 
 .language ul {
-  padding: 20px;
+  padding: 0.5rem;
   margin: 0;
   text-align: left;
 }
