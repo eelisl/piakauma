@@ -7308,8 +7308,10 @@ only screen and (min-width: 1920px) and (-ms-high-contrast: none) {
 
 
 #values .col-md-3 .img-wrapper img {
-  width: 300px;
-  height: auto;
+
+  object-fit: cover;
+  max-width: 300px;
+  max-height: auto;
 }
 
 @media (max-width: 991px) {
