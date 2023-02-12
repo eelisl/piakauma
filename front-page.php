@@ -54,7 +54,7 @@ get_header();
 		<section id="introduction">
 			<div class="container-larger">
 				<div class="col-md-12">
-					<div class="col-md-4">
+					<div class="col-md-5">
 						<?php if (the_field("lainaus_kuva")) : ?>
 
 							<img src=<?php echo the_field("lainaus_kuva"); ?> />
@@ -66,7 +66,7 @@ get_header();
 
 						<?php endif; ?>
 					</div>
-					<div class="col-md-8">
+					<div class="col-md-7">
 						<h2>
 							<?php echo the_field("esittelyn_otsikko"); ?>
 						</h2>
