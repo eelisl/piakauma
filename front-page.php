@@ -27,10 +27,13 @@ get_header();
 
 		<!--- HEADER -->
 		<div class="entry-header-front" style="background-image: url(<?php echo $featured_image; ?>);background-position: <?php
-																															if (get_field('kuvien_asettelu')) :
-																																echo get_field('kuvien_asettelu');
+																															if (get_field('kuvien_asettelu_leveys')) :
+																																echo get_field('kuvien_asettelu_leveys');
 																															else : echo "50";
-																															endif; ?>% 50%;">
+																															endif; ?>% <?php if (get_field('kuvien_asettelu_korkeus')) :
+																																			echo get_field('kuvien_asettelu_korkeus');
+																																		else : echo "50";
+																																		endif; ?>;">
 			<div class=" shade"></div>
 
 			<!---

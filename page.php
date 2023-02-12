@@ -24,10 +24,13 @@ $featured_image = '';
 if (has_post_thumbnail()) :
 	$featured_image = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>
 	<div class="entry-header-page" style="background-image: url(<?php echo $featured_image; ?>); background-position: <?php
-																														if (get_field('kuvien_asettelu')) :
-																															echo get_field('kuvien_asettelu');
+																														if (get_field('kuvien_asettelu_leveys')) :
+																															echo get_field('kuvien_asettelu_leveys');
 																														else : echo "50";
-																														endif; ?>% 50%;"></div>
+																														endif; ?>% <?php if (get_field('kuvien_asettelu_korkeus')) :
+																																			echo get_field('kuvien_asettelu_korkeus');
+																																		else : echo "50";
+																																		endif; ?>;">%;"></div>
 <?php endif; ?>
 
 <div id="content" class="content-area">
