@@ -26,8 +26,12 @@ get_header();
 	<main role="main" id="main" class="site-main">
 
 		<!--- HEADER -->
-		<div class="entry-header-front" style="background-image: url(<?php echo $featured_image; ?>);">
-			<div class="shade"></div>
+		<div class="entry-header-front" style="background-image: url(<?php echo $featured_image; ?>);background-position: <?php
+																															if (get_field('kuvien_asettelu')) :
+																																echo get_field('kuvien_asettelu');
+																															else : echo "50";
+																															endif; ?>% 50%;">
+			<div class=" shade"></div>
 
 			<!---
 			<div class="kokoomus">
