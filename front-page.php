@@ -57,7 +57,7 @@ get_header();
 					<div class="col-md-5">
 						<?php if (the_field("lainaus_kuva")) : ?>
 
-							<img src=<?php echo the_field("lainaus_kuva"); ?> />
+							<img src=<?php get_the_field("lainaus_kuva"); ?> />
 
 						<?php else : ?>
 							<p>
