@@ -7459,6 +7459,10 @@ only screen and (min-width: 991px) and (-ms-high-contrast: none) {
   text-align: left;
 }
 
+.language ul * {
+  color: #003366;
+}
+
 @media (max-width: 991px) {
   .language ul {
     text-align: center;
