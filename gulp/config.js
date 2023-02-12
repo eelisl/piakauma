@@ -56,8 +56,8 @@ module.exports = {
         reporters: [{
           formatter: 'string',
           console: true,
-          failAfterError: false,
-          debug: false
+          failAfterError: true,
+          debug: true
         }]
       },
     },

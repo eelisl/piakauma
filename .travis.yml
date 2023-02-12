@@ -1,17 +1,17 @@
-# Travis CI (MIT License) configuration file for the Air-light WordPress theme.
-# @link https://travis-ci.org/
+# Travis CI (MIT License) configuration file for the sovian WordPress theme.
+# @link https://travis-ci.com/
 
-# For use with the Air-light WordPress theme.
-# @link https://github.com/digitoimistodude/air-light
+# For use with the sovian WordPress theme.
+# @link https://github.com/digitoimistodude/sovian
 
 # Ditch sudo and use containers.
 # @link https://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
 # @link https://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure
-sudo: false
-dist: trusty
+sudo: required
+dist: xenial
 
 # Declare project language.
-# @link https://about.travis-ci.org/docs/user/languages/php/
+# @link https://about.travis-ci.com/docs/user/languages/php/
 language: php
 
 # Declare versions of PHP to use. Use one decimal max.
@@ -20,18 +20,8 @@ matrix:
     fast_finish: true
 
     include:
-        # Current $required_php_version for WordPress: 5.2.4
-        # aliased to 5.2.17
-        - php: '5.2'
-          dist: precise
-        # aliased to a recent 5.6.x version
-        - php: '5.6'
+        - php: '7.4'
           env: SNIFF=1
-        # aliased to a recent 7.0.x version
-        - php: '7.0'
-        # aliased to a recent 7.2.x version
-        - php: '7.2'
-        # bleeding edge PHP
         - php: 'nightly'
 
     allow_failures:
@@ -40,7 +30,14 @@ matrix:
 # Use this to prepare the system to install prerequisites or dependencies.
 # e.g. sudo apt-get update.
 # Failures in this section will result in build status 'errored'.
-# before_install:
+before_install:
+    - sudo rm -rf ~/.nvm
+    - curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+    - sudo apt-get install -y nodejs
+    - if [[ `node -v` != v10* ]]; then nvm install stable; fi
+    - nvm install-latest-npm
+    - nvm install 14.13.1
+    - nvm use 14.13.1
 
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
@@ -49,28 +46,44 @@ before_script:
     # Speed up build time by disabling Xdebug.
     - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
     # Set up temporary paths.
-    - export PHPCS_DIR=/tmp/phpcs
-    - export WPCS_DIR=/tmp/wpcs
-    - export PHPCOMPAT_DIR=/tmp/phpcompatibility
-    # Install CodeSniffer for WordPress Coding Standards checks.
+    - if [[ "$SNIFF" == "1" ]]; then export PHPCS_DIR=/tmp/phpcs; fi
+    - if [[ "$SNIFF" == "1" ]]; then export WPCS_DIR=/tmp/wpcs; fi
+    - if [[ "$SNIFF" == "1" ]]; then export PHPCOMPAT_DIR=/tmp/phpcompatibility; fi
+    - if [[ "$SNIFF" == "1" ]]; then export SNIFFS_DIR=/tmp/sniffs; fi
+    # Install PHP_CodeSniffer.
     - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
     # Install WordPress Coding Standards.
-    - if [[ "$SNIFF" == "1" ]]; then git clone -b 0.14.1 --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $WPCS_DIR; fi
-    # Install PHP Compatibility sniffs.
-    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/wimg/PHPCompatibility.git $PHPCOMPAT_DIR; fi
-    # Set install path for PHPCS sniffs.
-    # @link https://github.com/squizlabs/PHP_CodeSniffer/blob/4237c2fc98cc838730b76ee9cee316f99286a2a7/CodeSniffer.php#L1941
-    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs --config-set installed_paths $WPCS_DIR,$PHPCOMPAT_DIR; fi
+    - if [[ "$SNIFF" == "1" ]]; then git clone -b 2.2.1 --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $WPCS_DIR; fi
+    # Set install path for WordPress Coding Standards.
+    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs --config-set installed_paths $WPCS_DIR,$PHPCOMPAT_DIR,$SNIFFS_DIR; fi
     # After CodeSniffer install you should refresh your path.
     - if [[ "$SNIFF" == "1" ]]; then phpenv rehash; fi
+    # Install PHP Compatibility sniffs.
+    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/wimg/PHPCompatibility.git $PHPCOMPAT_DIR; fi
+    # Pull in the sovian phpcs rules.
+    - if [[ "$SNIFF" == "1" ]]; then wget https://raw.githubusercontent.com/digitoimistodude/sovian/master/phpcs.xml; fi
     # Install JSCS: JavaScript Code Style checker.
     # @link http://jscs.info/
-    - if [[ "$SNIFF" == "1" ]]; then npm install -g jscs; fi
+    # - if [[ "$SNIFF" == "1" ]]; then npm install -g jscs; fi
+    # Pull in the sovian eslint rules.
+    - if [[ "$SNIFF" == "1" ]]; then wget https://raw.githubusercontent.com/digitoimistodude/sovian/master/.eslintrc.js; fi
     # Install JSHint, a JavaScript Code Quality Tool.
     # @link http://jshint.com/docs/
-    - if [[ "$SNIFF" == "1" ]]; then npm install -g jshint; fi
+    # - if [[ "$SNIFF" == "1" ]]; then npm install -g jshint; fi
     # Pull in the WP Core jshint rules.
-    - if [[ "$SNIFF" == "1" ]]; then wget https://develop.svn.wordpress.org/trunk/.jshintrc; fi
+    # - if [[ "$SNIFF" == "1" ]]; then wget https://develop.svn.wordpress.org/trunk/.jshintrc; fi
+    # Install eslint.
+    # @link https://eslint.org/
+    - if [[ "$SNIFF" == "1" ]]; then npm i -g eslint@7.22.0; fi
+
+    # Install stylelint.
+    # @link https://stylelint.io/
+    - if [[ "$SNIFF" == "1" ]]; then npm i -g stylelint@14.0.1; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i -g stylelint-scss@4.0.0; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i -g postcss-scss@4.0.1; fi
+
+    # Install nu-html-checker
+    - if [[ "$SNIFF" == "1" ]]; then npm i -g html-validator-cli; fi
 
 # Run test script commands.
 # Default is specific to project language.
@@ -78,18 +91,40 @@ before_script:
 script:
     # Search for PHP syntax errors.
     - find -L . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
+
     # Run the theme through JSHint.
-    - if [[ "$SNIFF" == "1" ]]; then jshint .; fi
+    # - if [[ "$SNIFF" == "1" ]]; then jshint .; fi
+
     # Run the theme through JavaScript Code Style checker.
-    - if [[ "$SNIFF" == "1" ]]; then jscs .; fi
-    # WordPress Coding Standards.
-    # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
-    # @link https://pear.php.net/package/PHP_CodeSniffer/
-    # Uses a custom ruleset based on WordPress. This ruleset is automatically
-    # picked up by PHPCS as it's named `phpcs.xml(.dist)`.
-    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
+    # - if [[ "$SNIFF" == "1" ]]; then jscs .; fi
+
+    # Run the theme through Eslint.
+    - if [[ "$SNIFF" == "1" ]]; then npm i --save-dev eslint babel-eslint babel-loader babel-preset-airbnb eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i --save airbnb-browser-shims; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm link eslint; fi
+    - if [[ "$SNIFF" == "1" ]]; then eslint .; fi
+
+    # Run against WordPress Coding Standards.
+    # If you use a custom ruleset, change `--standard=WordPress` to point to your ruleset file,
+    # for example: `--standard=wpcs.xml`.
+    # You can use any of the normal PHPCS command line arguments in the command:
+    # https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage
+    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs -p . --ignore=node_modules,*/css/* --standard=phpcs.xml; fi
+
+    # Pull in the sovian stylelint rules.
+    - if [[ "$SNIFF" == "1" ]]; then wget https://raw.githubusercontent.com/digitoimistodude/sovian/master/.stylelintrc; fi
+
+    # Run the theme through stylelint.
+    - if [[ "$SNIFF" == "1" ]]; then wget https://raw.githubusercontent.com/digitoimistodude/sovian/master/package.json; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm link postcss; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm link stylelint; fi
+    - if [[ "$SNIFF" == "1" ]]; then stylelint . --max-warnings 0 --config .stylelintrc; fi
+
+    # Check for valid HTML
+    - if [[ "$SNIFF" == "1" ]]; then html-validator "https://airwptheme.com/demo" --format=text --quiet; fi
 
 # Receive notifications for build results.
 # @link https://docs.travis-ci.com/user/notifications/#Email-notifications
 notifications:
-    email: false
+    email: true

@@ -37,9 +37,6 @@ function watchFiles(done) {
     consoleInfo(path);
   });
 
-  // Lint styles
-  watch(config.styles.watch.development, series("lintstyles"));
-
   // Finish task
   done();
 }
