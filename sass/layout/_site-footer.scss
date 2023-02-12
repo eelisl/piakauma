@@ -1,0 +1,89 @@
+// ------------------------------------------------------------
+// Site footer
+//
+// The very bottom of the site. Usually contains supporting
+// or secondary navigation, social media icons, contact details
+// and such.
+//
+// Please note: These are mostly for demo purposes
+// so feel free to remove everything in this file
+// and start over.
+// ------------------------------------------------------------
+
+.site-footer {
+	padding: 80px 0;
+	background: $color-links;
+	overflow: hidden;
+	clear: both;
+
+	.icon {
+		margin: 10px 0;
+	}
+
+	.logo-footer img {
+		margin-top: 28px;
+	}
+
+	svg {
+		fill: #555;
+		top: 2px;
+		position: relative;
+	}
+
+	ul {
+		@media (max-width: $responsivenav) {
+			padding: 0;
+		}
+	}
+
+	ul li {
+		list-style: none;
+	}
+
+	p,
+	span {
+		color: #fff;
+	}
+
+	h4 {
+		color: #fff;
+	}
+
+	a {
+		font-weight: 600;
+		color: #fff;
+		line-height: 2.4;
+		word-wrap: break-word;
+
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+
+	.yhteys a,
+	p {
+		font-weight: 600;
+		color: #fff;
+	}
+}
+
+.footer-copy {
+	border-top: 1px solid #67c6d6;
+	background-color: $color-links;
+	padding: 20px;
+
+	p {
+		color: #e8e8e8;
+	}
+
+	a,
+	a:hover {
+		color: #fff;
+	}
+
+	.right {
+		@media (min-width: $responsivenav) {
+			text-align: right;
+		}
+	}
+}

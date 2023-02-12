@@ -1,0 +1,205 @@
+// ------------------------------------------------
+// Page
+//
+// All the other pages of the site, without any
+// particular layout.
+// ------------------------------------------------
+
+.block.block-page {
+	@media (min-width: $container-mobile) {
+		min-height: 300px;
+	}
+}
+
+.error-404 {
+	background-color: #ebf0f2;
+}
+
+.language {
+	background-color: #ebf0f2;
+
+	ul {
+		text-align: left;
+		margin: 0;
+		padding: 20px;
+
+		@media (max-width: $responsivenav) {
+			text-align: center;
+		}
+	}
+
+	li {
+		display: inline-block;
+		list-style: none;
+	}
+
+	a {
+		font-size: 14px;
+		margin: 10px 10px;
+	}
+}
+
+.hidden-video {
+	display: none;
+}
+
+.play2 {
+	text-align: center;
+	padding: 20px 0;
+	background: $color-links;
+
+	@media (min-width: 1500px) {
+		display: none;
+	}
+
+	img {
+		width: 100px;
+		height: 100px;
+	}
+
+	a:hover {
+		opacity: 0.8;
+	}
+}
+
+.play {
+	@include horizontal-align();
+	text-align: center;
+	z-index: 99;
+
+	@media (max-width: 1500px) {
+		display: none;
+	}
+
+	a {
+		color: #fff;
+	}
+
+	img {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+.play a:hover {
+	opacity: 0.8;
+}
+
+#tribe-events-pg-template,
+.tribe-events-pg-template {
+	padding: 120px 0;
+}
+
+// Twitter logo bugaus fiksi, ja IG
+.social-feed-container-2908 .social-feed-element .fa-twitter,
+.social-feed-container-2908 .social-feed-element .fa-instagram {
+	position: static !important;
+}
+
+// Muunna Datepicker leveämmäksi
+.datepicker.datepicker-inline td,
+.datepicker.datepicker-inline th,
+.datepicker.dropdown-menu td,
+.datepicker.dropdown-menu th {
+	padding: 0 40px !important;
+}
+
+#yt-video {
+	@media (min-width: 2000px) {
+		background-position: 0px -200px;
+	}
+}
+
+#tukiryhma {
+	.henkilo {
+		height: 400px;
+		padding: 40px 0;
+		border-bottom: 1px solid #d1d1d1;
+
+		@media (max-width: 962px) {
+			height: 500px;
+		}
+
+		@media (max-width: 767px) {
+			height: auto;
+		}
+	}
+
+	.henkilo:nth-last-of-type(-n + 2) {
+		border-bottom: none;
+	}
+
+	.henkilo:nth-child(even) {
+		@media (min-width: 767px) {
+			border-left: 1px solid #d1d1d1;
+		}
+	}
+
+	.henkilo:last-child {
+		@media (max-width: 767px) {
+			border-bottom: none;
+		}
+	}
+
+	.kuva-wrapper {
+		float: left;
+		overflow: hidden;
+		margin-left: 25px;
+
+		@media (max-width: 962px) {
+			float: none;
+			width: 100%;
+		}
+
+		img {
+			border-radius: 100px;
+			width: 100px;
+			height: 100px;
+		}
+	}
+
+	.esittely-teksti {
+		float: right;
+		width: 65%;
+		margin: 0px 30px 0px 0px;
+
+		@media (max-width: 962px) {
+			float: none;
+			width: 90%;
+			margin: 30px;
+		}
+
+		span {
+			line-height: 1.5;
+		}
+
+		.tyonkuva {
+			color: $color-links;
+		}
+	}
+
+	.clear {
+		clear: both;
+	}
+}
+
+.entry-header-page {
+	@include background-cover();
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: relative;
+	min-height: 40rem;
+	max-width: $layout-max-width;
+	margin: 0 auto;
+
+	// Internet Explorer needs this
+	height: 40rem;
+
+	@media (max-width: $responsivenav) {
+		background-position: 65%;
+	}
+
+	@media (min-width: 2000px) {
+		background-position: 0px -400px;
+	}
+}

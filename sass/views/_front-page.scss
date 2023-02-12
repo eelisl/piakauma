@@ -1,0 +1,186 @@
+.entry-header-front {
+	@include background-cover();
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: relative;
+	min-height: 60rem;
+	max-width: $layout-max-width;
+	margin: 0 auto;
+
+	// Internet Explorer needs this
+	height: 60rem;
+
+	@media (max-width: $responsivenav) {
+		background-position: 65%;
+	}
+
+	@media (min-width: 2000px) {
+		background-position: 0px -200px;
+	}
+
+	.kokoomus {
+		margin: 60px auto;
+		position: absolute;
+		right: 0;
+		left: 0;
+		max-width: 1100px;
+		text-align: right;
+
+		@media (max-width: $responsivenav) {
+			text-align: left;
+			margin: 42px;
+		}
+	}
+
+	.frontpage-hero {
+		@include vertical-align();
+
+		@media (max-width: $container-desktop) {
+			margin: 0 0 0 30px;
+		}
+	}
+
+	h1 {
+		@include responsive-font(2.8vw, 32px, 56px);
+		color: #fff;
+		text-align: left;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		z-index: 2;
+	}
+
+	p {
+		line-height: 1.44;
+		max-width: 300px;
+		margin-top: 10px;
+		@include responsive-font(2.4vw, 24px, 32px);
+		color: #fff;
+		text-align: left;
+	}
+}
+
+#values {
+	background-color: $color-lightgrey;
+
+	.col-md-3 {
+		text-align: center;
+
+		img {
+			border-radius: 225px;
+			width: 225px;
+			height: 225px;
+		}
+
+		@media (max-width: $responsivenav) {
+			margin-bottom: 40px;
+		}
+	}
+
+	p {
+		margin-top: 1.5rem;
+	}
+
+	h3 {
+		margin: 30px 0 0 0;
+	}
+}
+
+#blog {
+	background-color: $color-links;
+
+	h2 {
+		margin: 0 0 60px 0;
+		color: #fff;
+		text-align: center;
+	}
+
+	.box {
+		border-radius: 5px;
+		padding: 30px 30px 90px 30px;
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, .2);
+		height: 400px;
+		overflow: hidden;
+		background-color: #fff;
+
+		@media (max-width: $container-desktop) {
+			height: 500px;
+		}
+
+		@media (max-width: $responsivenav) {
+			@include stack();
+			height: 400px;
+			margin-bottom: 40px;
+		}
+
+		h3 {
+			overflow-wrap: break-word;
+			word-break: break-word;
+		}
+
+		&:hover h3 {
+			color: $color-links;
+		}
+
+		.date {
+			color: #666;
+			font-size: 1.6rem;
+		}
+
+		p {
+			color: $color-body-darker;
+		}
+	}
+
+	.show-all {
+		margin: 60px 0px 2px;
+		text-align: center;
+		text-transform: uppercase;
+
+		a {
+			font-weight: bold;
+			color: #fff;
+			border-bottom: 2px solid #fff;
+
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+}
+
+#post_tags {
+	background-color: #fff;
+
+	h2 {
+		text-align: center;
+	}
+	a {
+		background-color: $color-links;
+		color: #fff;
+		padding: 5px;
+		font-size: 20px;
+	}
+
+	.tagi {
+		text-align: center;
+		margin: 15px 0;
+	}
+}
+
+#feed {
+	background-color: #ebf0f2;
+
+	.social-feed-container-2760 .fa-facebook,
+	.social-feed-container-2908 .fa-facebook,
+	.social-feed-container-2760 .fa-twitter,
+	.social-feed-container-2760 .fa-instagram {
+		position: static !important;
+	}
+
+	h2 {
+		margin: 0 0 60px 0;
+		color: #222;
+		text-align: center;
+	}
+}
