@@ -3205,7 +3205,7 @@ pre {
   fill: #555;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .site-footer ul {
     padding: 0;
   }
@@ -3852,8 +3852,8 @@ form.search-form .search-submit {
   margin: 0;
 }
 
-@media only screen and (-ms-high-contrast: active) and (min-width: 991px),
-only screen and (-ms-high-contrast: none) and (min-width: 991px) {
+@media only screen and (-ms-high-contrast: active) and (min-width: 1440px),
+only screen and (-ms-high-contrast: none) and (min-width: 1440px) {
   .nav-primary .menu-items ul {
     display: none;
   }
@@ -3874,8 +3874,8 @@ only screen and (-ms-high-contrast: none) and (min-width: 991px) {
   margin-left: 25px;
 }
 
-@media only screen and (-ms-high-contrast: active) and (min-width: 991px),
-only screen and (-ms-high-contrast: none) and (min-width: 991px) {
+@media only screen and (-ms-high-contrast: active) and (min-width: 1440px),
+only screen and (-ms-high-contrast: none) and (min-width: 1440px) {
   .js .nav-primary ul .sub-menu.toggled-on {
     display: block;
   }
@@ -3908,7 +3908,7 @@ only screen and (-ms-high-contrast: none) and (min-width: 991px) {
   border-bottom: 1px solid #eee;
 }
 
-@media only screen and (min-width: 991px) {
+@media only screen and (min-width: 1440px) {
   .sub-menu {
     position: absolute;
     top: 100%;
@@ -4000,8 +4000,8 @@ only screen and (-ms-high-contrast: none) and (min-width: 991px) {
   }
 }
 
-@media only screen and (min-width: 991px) and (-ms-high-contrast: active),
-only screen and (min-width: 991px) and (-ms-high-contrast: none) {
+@media only screen and (min-width: 1440px) and (-ms-high-contrast: active),
+only screen and (min-width: 1440px) and (-ms-high-contrast: none) {
   .nav-primary .menu-items .sub-menu {
     top: 0;
     z-index: -1;
@@ -4056,14 +4056,14 @@ only screen and (min-width: 991px) and (-ms-high-contrast: none) {
   }
 }
 
-@media only screen and (min-width: 991px) and (-ms-high-contrast: active),
-only screen and (min-width: 991px) and (-ms-high-contrast: none) {
+@media only screen and (min-width: 1440px) and (-ms-high-contrast: active),
+only screen and (min-width: 1440px) and (-ms-high-contrast: none) {
   .nav-primary ul li:hover>ul {
     display: block;
   }
 }
 
-@media only screen and (min-width: 991px) {
+@media only screen and (min-width: 1440px) {
   .no-js .nav-primary .menu-items .menu-item-has-children:after {
     position: relative;
     position: absolute;
