@@ -11,13 +11,13 @@ $the_query = new WP_Query($args);
 
 		<div class="row">
 
-			<div class="col-md-3 col-sm-3 col-xs-12 logo-footer">
+			<div class="col-md-4 col-sm-4 col-xs-12 logo-footer">
 				<a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/images/logo-white.png" alt="Pia Kauma">
 				</a>
 
 			</div>
 
-			<div class="col-md-3 col-sm-3 col-xs-12">
+			<div class="col-md-4 col-sm-4 col-xs-12">
 				<?php wp_nav_menu(array(
 					'theme_location' => 'footer',
 					'container' => false,
@@ -31,7 +31,7 @@ $the_query = new WP_Query($args);
 				)); ?>
 			</div>
 
-			<div class="col-md-3 col-sm-3 col-xs-12 yhteys">
+			<div class="col-md-4 col-sm-4 col-xs-12 yhteys">
 
 				<?php if ($the_query->have_posts()) : ?>
 					<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
