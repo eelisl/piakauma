@@ -7310,6 +7310,7 @@ only screen and (min-width: 1920px) and (-ms-high-contrast: none) {
 #values .col-md-3 .img-wrapper img {
 
   object-fit: cover;
+  object-position: 50% 50%;
   max-width: 300px;
   max-height: auto;
 }
