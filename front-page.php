@@ -33,7 +33,7 @@ get_header();
 																															endif; ?>% <?php if (get_field('kuvien_asettelu_korkeus')) :
 																																			echo get_field('kuvien_asettelu_korkeus');
 																																		else : echo "50";
-																																		endif; ?>;">
+																																		endif; ?>%;">
 			<div class=" shade"></div>
 
 			<!---

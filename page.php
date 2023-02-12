@@ -28,9 +28,9 @@ if (has_post_thumbnail()) :
 																															echo get_field('kuvien_asettelu_leveys');
 																														else : echo "50";
 																														endif; ?>% <?php if (get_field('kuvien_asettelu_korkeus')) :
-																																			echo get_field('kuvien_asettelu_korkeus');
-																																		else : echo "50";
-																																		endif; ?>;">%;"></div>
+																																		echo get_field('kuvien_asettelu_korkeus');
+																																	else : echo "50";
+																																	endif; ?>%;"></div>
 <?php endif; ?>
 
 <div id="content" class="content-area">
