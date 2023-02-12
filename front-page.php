@@ -45,7 +45,7 @@ get_header();
 						<?php echo the_field("etusivun_kuvaus"); ?>
 					</p>
 
-					
+
 				</div>
 			</div>
 		</div>
@@ -59,9 +59,9 @@ get_header();
 							<p>
 								<?php echo the_field("lainausteksti"); ?>
 							</p>
-							
+
 						</blockquote>
-						
+
 					</div>
 					<div class="col-md-8">
 						<h2>
@@ -83,33 +83,35 @@ get_header();
 
 					<?php if (have_rows('arvot')) : ?>
 
-					<?php while (have_rows('arvot')) : the_row();
-					$arvo_header = get_sub_field('arvon_otsikko');
-					$arvo_description = get_sub_field('arvon_kuvaus');
-					$arvo_image = get_sub_field('arvon_kuva'); 
-					$arvo_linkki= get_sub_field('arvon_linkki'); ?>
+						<?php while (have_rows('arvot')) : the_row();
+							$arvo_header = get_sub_field('arvon_otsikko');
+							$arvo_description = get_sub_field('arvon_kuvaus');
+							$arvo_image = get_sub_field('arvon_kuva');
+							$arvo_linkki = get_sub_field('arvon_linkki'); ?>
 
-						<div class="col-md-3 col-sm-6 col-xs-12">
-							<img src="<?php echo $arvo_image; ?>" alt="<?php echo $arvo_image; ?>">
-							<h3>
-								<?php echo $arvo_header; ?>
-							</h3>
-							<p>
-								<?php echo $arvo_description; ?>
-							</p>
-							<?php if ($arvo_linkki): ?>
-								<a href="<?php echo $arvo_linkki; ?>">Lue lisää aiheesta <?php include get_theme_file_path('/svg/chevron-right-dark.svg'); ?></a>
-							<?php endif; ?>
-						</div>
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<img src="<?php echo $arvo_image; ?>" alt="<?php echo $arvo_image; ?>">
+								<h3>
+									<?php echo $arvo_header; ?>
+								</h3>
+								<p>
+									<?php echo $arvo_description; ?>
+								</p>
+								<?php if ($arvo_linkki) : ?>
+									<a href="<?php echo $arvo_linkki; ?>">Lue lisää aiheesta <?php include get_theme_file_path('/svg/chevron-right-dark.svg'); ?></a>
+								<?php endif; ?>
+							</div>
 
 						<?php endwhile; ?>
 
-						<?php endif; ?>
+					<?php endif; ?>
 				</div>
 			</div>
 		</section>
 
-		<?php include('template-parts/favourite-tags.php'); ?>
+		<?php
+		// include('template-parts/favourite-tags.php'); 
+		?>
 
 		<!--- LATEST BLOG POSTS  -->
 		<section id="blog">
@@ -118,34 +120,34 @@ get_header();
 				<div class="row">
 					<h2>Viimeisimmät kirjoitukset</h2>
 					<?php
-				$posts = 3;
-				$args = array(
-					'post_type' => 'post',
-					'posts_per_page' => $posts,
-				);
+					$posts = 3;
+					$args = array(
+						'post_type' => 'post',
+						'posts_per_page' => $posts,
+					);
 
-				$post_query = new WP_Query($args);
+					$post_query = new WP_Query($args);
 
-				if ($post_query->have_posts()) {
-					while ($post_query->have_posts()) {
-						$post_query->the_post();
-						?>
-								<div class="col-md-4 col-sm-6 col-xs-12">
-									<a href="<?php the_permalink(); ?>">
-										<div class="box">
-											<span class="date">
-												<?php echo get_the_date(); ?></span>
-											<h3>
-												<?php the_title(); ?>
-											</h3>
-											<div class="lead">
-												<?php the_excerpt(); ?>
-											</div>
+					if ($post_query->have_posts()) {
+						while ($post_query->have_posts()) {
+							$post_query->the_post();
+					?>
+							<div class="col-md-4 col-sm-6 col-xs-12">
+								<a href="<?php the_permalink(); ?>">
+									<div class="box">
+										<span class="date">
+											<?php echo get_the_date(); ?></span>
+										<h3>
+											<?php the_title(); ?>
+										</h3>
+										<div class="lead">
+											<?php the_excerpt(); ?>
 										</div>
-									</a>
+									</div>
+								</a>
 
-								</div>
-								<?php
+							</div>
+					<?php
 
 						}
 						wp_reset_postdata();
