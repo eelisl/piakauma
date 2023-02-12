@@ -7284,7 +7284,7 @@ only screen and (min-width: 1920px) and (-ms-high-contrast: none) {
 }
 
 @media (max-width: 1920px) {
-  #introduction .container-larger .col-md-12 .col-md-4 img {
+  #introduction .container-larger .col-md-12 .col-md-5 img {
     display: none;
   }
 }
