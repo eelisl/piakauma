@@ -7283,7 +7283,7 @@ only screen and (min-width: 2480px) and (-ms-high-contrast: none) {
   object-position: 50% 50%;
 }
 
-@media (max-width: 2480px) {
+@media (max-width: 991px) {
   #introduction .container-larger .col-md-12 .col-md-5 img {
     display: none;
   }
