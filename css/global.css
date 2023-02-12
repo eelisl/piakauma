@@ -5865,7 +5865,7 @@ only screen and (min-width: 991px) and (-ms-high-contrast: none) {
   transform: rotate(-90deg);
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1440px) {
   .no-js .site-header {
     position: static;
     background: #00b5d4;
@@ -6084,7 +6084,7 @@ only screen and (min-width: 991px) and (-ms-high-contrast: none) {
   color: #333;
 }
 
-@media (max-width: 990px) {
+@media (max-width: 1440px) {
   .nav-toggle {
     display: block;
   }
@@ -7204,7 +7204,6 @@ only screen and (min-width: 991px) and (-ms-high-contrast: none) {
   position: absolute;
   right: 0;
   left: 0;
-  max-width: 1100px;
   margin: 60px auto;
   text-align: right;
 }
