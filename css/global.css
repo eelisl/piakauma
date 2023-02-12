@@ -7297,12 +7297,19 @@ only screen and (min-width: 1920px) and (-ms-high-contrast: none) {
   text-align: center;
 }
 
-#values .col-md-3 img {
+#values .col-md-3 .img-wrapper {
+
+  width: 225px;
+  height: 225px;
+  border-radius: 50%;
+}
+
+
+#values .col-md-3 .img-wrapper img {
   object-fit: cover;
   object-position: 50%;
-  width: 225px;
+  width: 110%;
   height: auto;
-  border-radius: 225px;
 }
 
 @media (max-width: 991px) {
