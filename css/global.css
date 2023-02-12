@@ -3168,7 +3168,7 @@ pre {
   justify-content: space-between;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .site-header {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -3859,7 +3859,7 @@ only screen and (-ms-high-contrast: none) and (min-width: 991px) {
   }
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1440px) {
   .js .nav-primary .menu-items ul {
     display: none;
   }
@@ -3881,7 +3881,7 @@ only screen and (-ms-high-contrast: none) and (min-width: 991px) {
   }
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1440px) {
   .js .nav-primary ul .sub-menu.toggled-on {
     display: block;
   }
@@ -4050,7 +4050,7 @@ only screen and (min-width: 991px) and (-ms-high-contrast: none) {
   }
 }
 
-@media only screen and (min-width: 991px) and (max-width: 991px) {
+@media only screen and (min-width: 1440px) and (max-width: 1440px) {
   .nav-primary ul li:hover>ul {
     display: block;
   }
@@ -7188,7 +7188,7 @@ only screen and (min-width: 991px) and (-ms-high-contrast: none) {
   background-size: cover;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .entry-header-front {
     background-position: 65%;
   }
@@ -7208,7 +7208,7 @@ only screen and (min-width: 991px) and (-ms-high-contrast: none) {
   text-align: right;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .entry-header-front .kokoomus {
     margin: 42px;
     text-align: left;
@@ -7284,7 +7284,7 @@ only screen and (min-width: 991px) and (-ms-high-contrast: none) {
   object-position: 50% 50%;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   #introduction .container-larger .col-md-12 .col-md-4 img {
     display: none;
   }
@@ -7651,7 +7651,7 @@ only screen and (min-width: 991px) and (-ms-high-contrast: none) {
   background-size: cover;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .entry-header-page {
     background-position: 65%;
   }
