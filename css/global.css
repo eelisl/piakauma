@@ -7275,6 +7275,16 @@ only screen and (min-width: 991px) and (-ms-high-contrast: none) {
   }
 }
 
+#introduction p {
+  font-size: 16px;
+  font-weight: 200;
+}
+
+#introduction img {
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
 #values {
   background-color: #ebf0f2;
 }

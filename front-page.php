@@ -55,13 +55,16 @@ get_header();
 			<div class="container-larger">
 				<div class="col-md-12">
 					<div class="col-md-4">
-						<blockquote>
+						<?php if (the_field("lainaus_kuva")) : ?>
+
+							<img src=<?php echo the_field("lainaus_kuva"); ?> />
+
+						<?php else : ?>
 							<p>
 								<?php echo the_field("lainausteksti"); ?>
 							</p>
 
-						</blockquote>
-
+						<?php endif; ?>
 					</div>
 					<div class="col-md-8">
 						<h2>
