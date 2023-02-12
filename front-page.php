@@ -63,7 +63,8 @@ get_header();
 
 							<img src=<?php echo get_field("lainaus_kuva"); ?> />
 
-						<?php else : ?>
+						<?php endif; ?>
+						<?php if (get_field("lainausteksti")) : ?>
 							<p>
 								<?php echo the_field("lainausteksti"); ?>
 							</p>
