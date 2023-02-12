@@ -3345,9 +3345,9 @@ pre {
 .language input[type="reset"].button-ghost,
 .language input[type="submit"].button-ghost,
 .language input[type="button"].button-ghost {
-  color: #00b5d4;
+  color: #003366;
   background-color: transparent;
-  border: 1px solid #00b5d4;
+  border: 1px solid #003366;
 }
 
 .content-area button.button-ghost:hover,
@@ -3389,8 +3389,8 @@ pre {
 .language input[type="submit"].button-ghost.button-ghost-white:hover,
 .language input[type="button"].button-ghost.button-ghost-white:hover {
   color: #fff;
-  background-color: #00b5d4;
-  border-color: #00b5d4;
+  background-color: #003366;
+  border-color: #003366;
 }
 
 a,
