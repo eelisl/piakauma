@@ -7330,6 +7330,7 @@ only screen and (min-width: 2480px) and (-ms-high-contrast: none) {
 
   position: absolute;
   top: -20px;
+  left: 0;
   width: 100%;
   height: auto;
 
