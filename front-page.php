@@ -58,36 +58,6 @@ get_header();
 		</div>
 
 		<!--- INTRO SECTION -->
-		<section id="introduction">
-			<div class="container-larger">
-				<div class="col-md-12">
-					<div class="col-md-5">
-						<?php if (get_field("lainaus_kuva")) : ?>
-
-							<img src=<?php echo get_field("lainaus_kuva"); ?> />
-
-						<?php endif; ?>
-						<?php if (get_field("lainausteksti")) : ?>
-							<p>
-								<?php echo the_field("lainausteksti"); ?>
-							</p>
-
-						<?php endif; ?>
-					</div>
-					<div class="col-md-7">
-						<h2>
-							<?php echo the_field("esittelyn_otsikko"); ?>
-						</h2>
-						<p>
-							<?php echo the_field("esittelyn_tekstit"); ?>
-						</p>
-
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!--- VALUES  -->
 		<section id="values">
 			<div class="container-larger">
 				<div class="col-md-12">
@@ -121,6 +91,37 @@ get_header();
 				</div>
 			</div>
 		</section>
+		<section id="introduction">
+			<div class="container-larger">
+				<div class="col-md-12">
+					<div class="col-md-5">
+						<?php if (get_field("lainaus_kuva")) : ?>
+
+							<img src=<?php echo get_field("lainaus_kuva"); ?> />
+
+						<?php endif; ?>
+						<?php if (get_field("lainausteksti")) : ?>
+							<p>
+								<?php echo the_field("lainausteksti"); ?>
+							</p>
+
+						<?php endif; ?>
+					</div>
+					<div class="col-md-7">
+						<h2>
+							<?php echo the_field("esittelyn_otsikko"); ?>
+						</h2>
+						<p>
+							<?php echo the_field("esittelyn_tekstit"); ?>
+						</p>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!--- VALUES  -->
+
 
 		<?php
 		// include('template-parts/favourite-tags.php'); 
