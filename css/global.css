@@ -7304,13 +7304,13 @@ only screen and (min-width: 2480px) and (-ms-high-contrast: none) {
   margin-top: 2rem;
   padding: 0;
   padding-bottom: 3rem;
-  max-width: 250px;
+  max-width: 300px;
   flex: 1 0 25%;
 }
 
 #values .col-md-3 .img-wrapper {
   position: relative;
-  width: calc(250px+1rem);
+  width: calc(300px+1rem);
   height: 150px;
   margin: 0;
   overflow: hidden;
@@ -7319,7 +7319,7 @@ only screen and (min-width: 2480px) and (-ms-high-contrast: none) {
 
 #values .col-md-3 .img-wrapper img {
 
-  width: 250px;
+  width: 300px;
   height: auto;
 
 }
