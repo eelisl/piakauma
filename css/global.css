@@ -7297,6 +7297,7 @@ only screen and (min-width: 2480px) and (-ms-high-contrast: none) {
 #values .col-md-3 {
   text-align: center;
   background-color: white;
+  margin-right: 2rem;
 }
 
 #values .col-md-3 .img-wrapper {
