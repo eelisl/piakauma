@@ -7292,6 +7292,9 @@ only screen and (min-width: 2480px) and (-ms-high-contrast: none) {
 #values {
   background-color: #ebf0f2;
   text-align: center;
+}
+
+#values .col-md-12 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
