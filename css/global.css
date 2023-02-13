@@ -7305,7 +7305,7 @@ only screen and (min-width: 2480px) and (-ms-high-contrast: none) {
   padding: 0;
   padding-bottom: 3rem;
   max-width: 250px;
-  flex: 1 0 21%;
+  flex: 1 0 25%;
 }
 
 #values .col-md-3 .img-wrapper {
