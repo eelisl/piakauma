@@ -7294,6 +7294,7 @@ only screen and (min-width: 2480px) and (-ms-high-contrast: none) {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 #values .col-md-3 {
