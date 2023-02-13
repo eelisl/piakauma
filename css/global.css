@@ -7336,7 +7336,7 @@ only screen and (min-width: 2480px) and (-ms-high-contrast: none) {
 }
 
 #values a {
-  margin: 0 0 0 3rem;
+  margin: 0 0 3rem 0;
 }
 
 #blog {
