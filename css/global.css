@@ -7292,6 +7292,9 @@ only screen and (min-width: 2480px) and (-ms-high-contrast: none) {
 #values {
   background-color: #ebf0f2;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+
 }
 
 #values .col-md-3 {
@@ -7300,6 +7303,7 @@ only screen and (min-width: 2480px) and (-ms-high-contrast: none) {
   margin-right: 2rem;
   margin-top: 2rem;
   padding: 0;
+  padding-bottom: 3rem;
   max-width: 250px;
 }
 
