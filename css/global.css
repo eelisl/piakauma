@@ -7284,8 +7284,9 @@ only screen and (min-width: 2480px) and (-ms-high-contrast: none) {
 }
 
 @media (max-width: 991px) {
-  #introduction .container-larger .col-md-12 .col-md-5 img {
-    display: none;
+  #introduction .container-larger .col-md-12 {
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 
