@@ -60,6 +60,13 @@ get_header();
 		<!--- INTRO SECTION -->
 		<section id="values">
 			<div class="container-larger">
+				<h2 class="values-title"><?php if (get_field("arvoblokin_otsikko")) {
+												echo get_field("arvoblokin_otsikko");
+											} ?></h2>
+				<p><?php if (get_field("arvoblokin_teksti")) {
+						echo get_field("arvoblokin_teksti");
+					} ?>
+				</p>
 				<div class="col-md-12">
 
 					<?php if (have_rows('arvot')) : ?>
