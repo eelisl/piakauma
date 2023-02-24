@@ -7482,6 +7482,9 @@ only screen and (min-width: 2480px) and (-ms-high-contrast: none) {
 #feed .container-larger {
   background-color: #00b5d4;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 #feed .container-larger h2 {
