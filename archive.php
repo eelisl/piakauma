@@ -4,6 +4,13 @@
 Template name: Archives
  */
 
+ $featured_image = '';
+if (has_post_thumbnail()) :
+	$featured_image = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+else :
+	$featured_image = get_theme_file_uri('images/Edkauma_valtiosali.jpg');
+endif;
+
 get_header(); ?>
 
 <div id="content" class="content-area">

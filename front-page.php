@@ -78,9 +78,11 @@ get_header();
 							$arvo_linkki = get_sub_field('arvon_linkki'); ?>
 
 							<div class="col-md-3 col-sm-6 col-xs-12">
-								<div class="img-wrapper">
-									<img src="<?php echo $arvo_image; ?>" alt="<?php echo $arvo_image; ?>">
-								</div>
+								<?php if ($arvo_image) : ?>
+									<div class="img-wrapper">
+										<img src="<?php echo $arvo_image; ?>" alt="<?php echo $arvo_image; ?>">
+									</div>
+								<?php endif; ?>
 								<h3>
 									<?php echo $arvo_header; ?>
 								</h3>
