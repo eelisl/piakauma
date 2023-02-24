@@ -7485,7 +7485,7 @@ only screen and (min-width: 2480px) and (-ms-high-contrast: none) {
 }
 
 #feed .container-larger h2 {
-  margin-top: 1rem;
+  margin: 1rem;
   color: white;
 }
 
