@@ -7481,17 +7481,25 @@ only screen and (min-width: 2480px) and (-ms-high-contrast: none) {
 
 #feed .container-larger {
   background-color: #00b5d4;
+  border-radius: 10px;
+}
+
+#feed .container-larger h2 {
+  margin-top: 1rem;
+  color: white;
 }
 
 #feed .container-larger .col-md-5 {
   margin: 1rem;
   background-color: white;
   padding: 1rem;
+  border-radius: 10px;
 }
 
 #feed .container-larger .col-md-12 {
   background-color: white;
   padding: 1rem;
+  border-radius: 10px;
 }
 
 @media (min-width: 480px) {

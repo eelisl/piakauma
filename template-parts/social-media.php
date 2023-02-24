@@ -20,7 +20,7 @@
         </div>
 
     </div>
-    <div class="container-larger">
+    <div class="container-larger justify-content-center">
         <div class="col-md-5 col-sm-12">
             <h3>Facebook</h3>
             <?php echo do_shortcode("[custom-facebook-feed feed=1]") ?>
