@@ -21,13 +21,13 @@
 
     </div>
     <div class="container-larger justify-content-center">
-        <div class="col-md-5 col-sm-12">
+        <div class="col-md-12">
             <h3>Instagram</h3>
             <?php echo do_shortcode("[instagram-feed feed=1]") ?>
         </div>
     </div>
     <div class="container-larger">
-        <div class="col-md-5 col-sm-12">
+        <div class="col-md-12">
             <h3>Facebook</h3>
             <?php echo do_shortcode("[custom-facebook-feed feed=1]") ?>
         </div>
