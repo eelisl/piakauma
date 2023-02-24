@@ -7483,8 +7483,15 @@ only screen and (min-width: 2480px) and (-ms-high-contrast: none) {
   background-color: #00b5d4;
 }
 
-#feed .container-larger .col-md-6 {
+#feed .container-larger .col-md-5 {
   margin: 1rem;
+  background-color: white;
+  padding: 1rem;
+}
+
+#feed .container-larger .col-md-12 {
+  background-color: white;
+  padding: 1rem;
 }
 
 @media (min-width: 480px) {
