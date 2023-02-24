@@ -7479,6 +7479,14 @@ only screen and (min-width: 2480px) and (-ms-high-contrast: none) {
   text-align: center;
 }
 
+#feed .container-larger {
+  background-color: #00b5d4;
+}
+
+#feed .container-larger .col-md-6 {
+  margin: 1rem;
+}
+
 @media (min-width: 480px) {
   .block.block-page {
     min-height: 300px;
